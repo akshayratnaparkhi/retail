@@ -1,0 +1,8 @@
+# Turn rewrite engine on
+Options +FollowSymlinks
+RewriteEngine on
+
+# map neat URL to internal URL
+RewriteRule ^products/list/$   RetailController.php?view=all [nc,qsa]
+RewriteRule ^products/list/([0-9]+)/$   RetailController.php?view=single&id=$1 [nc,qsa]
+RewriteRule ^products/list/([0-9]+)/([0-9]+)/$   RetailController.php?view=hybrid&category=$1&id=$2 [nc,qsa]
